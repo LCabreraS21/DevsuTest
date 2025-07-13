@@ -1,0 +1,22 @@
+# Conclusiones del Ejercicio de Automatización E2E
+
+## Hallazgos:
+* Se logró implementar con éxito un flujo de prueba automatizado completo para el proceso de compra en Demoblaze.
+* La prueba cubre los siguientes escenarios:
+    * Navegación a la página principal.
+    * Adición de múltiples productos al carrito.
+    * Verificación de la presencia de productos en el carrito.
+    * Completar el formulario de información de compra.
+    * Finalizar el proceso de compra.
+    * Confirmación de la compra exitosa.
+* Se utilizaron patrones de diseño como Page Object Model (POM) para organizar el código de manera modular y mantenible (HomePage, CartPage, CheckoutPage).
+* Las esperas explícitas de Selenium WebDriver (WebDriverWait con ExpectedConditions) fueron fundamentales para manejar la sincronización con los elementos dinámicos de la página web, evitando fallos por elementos no cargados o no clicables.
+* El uso de WebDriverManager simplificó la gestión de los drivers del navegador.
+* TestNG se empleó como framework de pruebas para la gestión de @BeforeMethod, @AfterMethod y @Test.
+
+## Conclusiones:
+* La automatización de pruebas End-to-End es crucial para validar el flujo completo de una aplicación desde la perspectiva del usuario final.
+* Este ejercicio demuestra la capacidad de Selenium WebDriver y Maven/TestNG para crear suites de pruebas robustas y escalables.
+* Se identificó la importancia de la precisión en los localizadores (By.id, By.xpath, By.linkText) y la necesidad de ajustar la lógica de búsqueda (ej., `contains(text(), ...)` vs `text()='...'`) para manejar variaciones sutiles en el contenido HTML.
+* La depuración visual y la adición temporal de pausas (`Thread.sleep()`) fueron herramientas valiosas para identificar y comprender los puntos de falla en el flujo.
+* El mantenimiento del código a través de POM y esperas explícitas contribuye a que la suite de pruebas sea menos frágil ante cambios menores en la interfaz de usuario.
